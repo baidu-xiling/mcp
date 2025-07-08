@@ -13,16 +13,16 @@ Baidu Intelligent Cloud Xiling Digital Human Open Platform has now been fully ad
  
 |           Function            | <div style="text-align: center">Function Description</div>                                                                                                                              | <div style="text-align: center"> contains tools</div>     |
 |:-----------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------|
-| 2D small sample digital human | Generate a digital portrait based on the uploaded video recorded by a real person, which can only be used for basic video production, and the digital human uses a universal lip drive. | • generateLite2dGeneralVideo<br> • getLite2dGeneralStatus |
+|  2D few-shot digital human    | Generate a digital portrait based on the uploaded video recorded by a real person, which can only be used for basic video production, and the digital human uses a universal lip drive. | • generateLite2dGeneralVideo<br> • getLite2dGeneralStatus |
 | Digital human video synthesis | Generate digital human video based on the selected digital portrait and timbre                                                                                                          | • generateDhVideo<br> • getDhVideoStatus                  |
-|    123 Digital Human Video    | According to the video recorded by the real person and the selected timbre, the corresponding digital human video can be directly produced without the need for portrait generation     | • generateDh123Video<br> • getDh123VideoStatus            |
+|    123 Digital Human Video    | Providing a 10 second to 4-minute live streaming video of saying "123", the corresponding digital human video can be directly produced without the need for portrait generation         | • generateDh123Video<br> • getDh123VideoStatus            |
 |       Speech synthesis        | Based on the text content provided and the selected timbre, no video is needed to generate the corresponding audio                                                                      | • generateText2Audioo<br> • getText2AudioStatus           |
 |          File Upload          | Upload the required files based on the service type.                                                                                                                                    | • uploadFiles                                             |
 |          Voice Query          | Query available system voice talent.                                                                                                                                                    | • getVoices                                               |
 |         Figure Query          | Query available figure                                                                                                                                                                  | • getFigures                                              |
 |          Voice Clone          | Generate timbres based on uploaded audio, which can be used for speech synthesis and video production.                                                                                  | • generateVoiceClone <br>• getVoiceCloneStatus            |
 
-### 1. 2D little sample digital human
+### 1. 2D few-shot digital human
 - Function description: Generate a digital portrait based on the uploaded video recorded by a real person, which can only be used for basic video production, and the digital human uses a universal lip drive.
 (webm videos with transparent backgrounds)
 - Sample prompt words:  
@@ -56,13 +56,15 @@ Baidu Intelligent Cloud Xiling Digital Human Open Platform has now been fully ad
 | getDhVideoStatus | Query the progress of digital human video composition.                            | • taskId: the ID of the current video synthesis task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | • taskId: the task ID of the current video composition<br> • status: SUBMIT(submitted for synthesis), GENERATING (compositing), SUCCESS(synthesis successful), FAILED(synthesis failed)<br> • failedCode: Error code<br> • failedMessage: Reason for production failure<br> • videoUrl: The address of the successfully synthesized video file corresponding to the task ID, which will be saved for 7 days |
 
 ### 3. 123 digital human video compositing
-- Function description: According to the video recorded by the real person and the selected timbre, the corresponding digital human video can be directly generated without the need for portrait generation
+- Function description: Providing a 10 second to 4-minute live streaming video of saying "123", the corresponding digital human video can be directly produced without the need for portrait generation
 - Sample prompt words:  
 >Use a video file with fileid as xxx and a voice voice with the voice talent ID of yyy, and the content of the video is "Hello everyone, I am the content broadcast by a digital human", and generate a digital human video.
 
 >The address of the video is https://open-api-test.bj.bcebos.com/ae870923-2a3b-4d5e-b6a2-e44b4025647220250417_163529_trim.mp4, the voice voice is yyy, and the content of the video is "Hello everyone, I am the content broadcast by the digital human", and a digital human video is generated.
 
 >Check the 123 digital human video with a taskid of xxx.
+
+You can check the [guide](https://xiling.cloud.baidu.com/doc/AI_DH/s/Lm5w29xr4) on the website
   
 - Tool details:
  
@@ -96,7 +98,7 @@ Baidu Intelligent Cloud Xiling Digital Human Open Platform has now been fully ad
 
 |Tool name|<div style="text-align: center">Tool description</div>|<div style="text-align: center">Input parameters</div>|<div style="text-align: center">Output content</div>|
 |:---:|:---|:---|:---|
-|uploadFiles|Upload the required files according to the service type.|• file: The file to be uploaded<br> • providerType: The service type that uses this file is currently limited to three service types: "2D small sample digital human production", "sound cloning", and "123 digital human video production". <br> • sourceFileName: the name of the uploaded file, which must be filled in with the correct file name and suffix, for example, :test.mp3. |• fileId: file ID<br> • fileName: the name of the uploaded file
+|uploadFiles|Upload the required files according to the service type.|• file: The file to be uploaded<br> • providerType: The service type that uses this file is currently limited to three service types: "2D few-shot digital human production", "sound cloning", and "123 digital human video production". <br> • sourceFileName: the name of the uploaded file, which must be filled in with the correct file name and suffix, for example, :test.mp3. |• fileId: file ID<br> • fileName: the name of the uploaded file
 
 ### 6. Voice queries
 - Function description: Query available system voices
