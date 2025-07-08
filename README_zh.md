@@ -19,7 +19,7 @@
 |:---:|:---|:---|
 |2D小样本数字人|根据上传真人录制的视频生成数字人像，仅可用于基础视频制作，数字人使用通用口型驱动。|&bull; generateLite2dGeneralVideo<br> &bull; getLite2dGeneralStatus|
 |数字人视频合成|根据所选数字人像及音色，生成数字人视频|&bull; generateDhVideo<br> &bull; getDhVideoStatus|
-|123数字人视频|根据真人录制的视频及选定音色，无需人像生成，直接生产对应的数字人视频|&bull; generateDh123Video<br> &bull; getDh123VideoStatus|
+|123数字人视频|提供一段10秒-4分钟口播123123的真人视频，直接生产对应的数字人视频|&bull; generateDh123Video<br> &bull; getDh123VideoStatus|
 |语音合成|根据提供的文本内容及选定音色，无需生成视频，生产对应的音频|&bull; generateText2Audio<br> &bull; getText2AudioStatus|
 |文件上传|根据业务类型上传所需要的文件。|&bull; uploadFiles|
 |音色查询|查询可用的系统发音人ID。|&bull; getVoices|
@@ -60,7 +60,7 @@
 |getDhVideoStatus|查询数字人视频合成进度。|&bull; taskId：当前视频合成的任务ID|&bull; taskId：当前视频合成的任务ID<br> &bull; status：状态：SUBMIT（已提交待合成）,GENERATING（合成中）,SUCCESS（合成成功）,FAILED（合成失败）<br> &bull; failedCode：失败错误码<br> &bull; failedMessage：制作失败原因<br> &bull; videoUrl：任务ID对应的成功合成的视频文件地址，文件会保存 7 天|
 
 ### 3. 123数字人视频合成
-- 功能说明：根据真人录制的视频及选定音色，无需人像生成，直接生产对应的数字人视频
+- 功能说明：提供一段10秒-4分钟口播123123的真人视频，直接生产对应的数字人视频
 - 示例提示词：
 
 > 用fileid为xxx的视频文件，发音人ID为yyy的音色，视频的内容是“大家好，我是数字人播报的内容”，生成一个数字人视频。
@@ -68,6 +68,8 @@
 > 视频的地址是https://open-api-test.bj.bcebos.com/ae870923-2a3b-4d5e-b6a2-e44b4025647220250417_163529_trim.mp4 ，用发音人ID为yyy的音色，视频的内容是“大家好，我是数字人播报的内容”，生成一个数字人视频。
 
 > 查一下taskid为xxx的123数字人视频好了没有。
+
+参考官网的[拍摄指南](https://xiling.cloud.baidu.com/doc/AI_DH/s/Lm5w29xr4)
 
 - 工具详情：
 
